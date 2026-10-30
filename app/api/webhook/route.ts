@@ -2,7 +2,7 @@ import { NextResponse } from "next/server";
 import Stripe from "stripe";
 import { setProfilePaid } from "@/lib/db";
 
-const stripe = new Stripe(process.env.STRIPE_SECRET_KEY || "", { apiVersion: "2025-07-30.basil" });
+const stripe = new Stripe(process.env.STRIPE_SECRET_KEY || "", { apiVersion: "2025-08-27.basil" });
 const endpointSecret = process.env.STRIPE_WEBHOOK_SECRET || "";
 
 export async function POST(req: Request) {
