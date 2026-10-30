@@ -19,6 +19,12 @@ export default function RecipeBox() {
 
   const allTags = [...new Set((recipes ?? []).flatMap((r) => r.tags))].sort();
 
+  async function resetData() {
+    if (!confirm("This will erase all user data and restore the seed recipes. Continue?")) return;
+    await fetch("/api/reset", { method: "POST" });
+    window.location.reload();
+  }
+
   return (
     <>
       <div className="page-head">
@@ -38,6 +44,7 @@ export default function RecipeBox() {
           <option value="">All tags</option>
           {allTags.map((t) => <option key={t} value={t}>{t}</option>)}
         </select>
+        <button className="ghost small-btn" onClick={resetData}>Reset to seed data</button>
       </div>
 
       {recipes === null && <p className="muted">Loading...</p>}
