@@ -1,5 +1,5 @@
 "use client";
-import { useEffect, useState } from "react";
+import { Suspense, useEffect, useState } from "react";
 import { useParams } from "next/navigation";
 import RecipeForm from "@/components/RecipeForm";
 import type { Recipe } from "@/lib/db";
@@ -18,7 +18,9 @@ export default function EditRecipePage() {
   return (
     <>
       <h1>Edit recipe</h1>
-      <RecipeForm recipe={recipe} />
+      <Suspense fallback={<p className="muted">Loading...</p>}>
+        <RecipeForm recipe={recipe} />
+      </Suspense>
     </>
   );
 }
