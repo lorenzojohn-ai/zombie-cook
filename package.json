@@ -1,0 +1,26 @@
+{
+  "name": "zombie-cook",
+  "version": "0.2.0",
+  "private": true,
+  "description": "A revived recipe box, meal planner and grocery list.",
+  "scripts": {
+    "dev": "next dev -p 3109",
+    "build": "next build",
+    "start": "next start -p 3109"
+  },
+  "dependencies": {
+    "better-sqlite3": "^12.1.0",
+    "cheerio": "^1.0.0",
+    "next": "16.4.3",
+    "react": "19.3.1",
+    "react-dom": "19.3.1",
+    "stripe": "^18.0.0"
+  },
+  "devDependencies": {
+    "@types/better-sqlite3": "^7.6.13",
+    "@types/node": "^22",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "typescript": "^5"
+  }
+}
