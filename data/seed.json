@@ -1,0 +1,92 @@
+{
+  "users": [
+    { "id": "u1", "name": "Maya Chen", "color": "#4b36d9" },
+    { "id": "u2", "name": "Luis Ortega", "color": "#3f8f3a" },
+    { "id": "u3", "name": "Priya Nair", "color": "#c2562f" }
+  ],
+  "recipes": [
+    {
+      "id": "1001", "ownerId": "u1", "title": "Weeknight Chicken Fried Rice", "servings": 4, "minutes": 25,
+      "tags": ["dinner", "quick", "rice"],
+      "ingredients": [
+        { "amount": 3, "unit": "cup", "name": "cooked rice", "fixed": false },
+        { "amount": 2, "unit": "", "name": "chicken breasts", "fixed": false },
+        { "amount": 2, "unit": "", "name": "eggs", "fixed": false },
+        { "amount": 1, "unit": "", "name": "Onion", "fixed": false },
+        { "amount": 1, "unit": "cup", "name": "frozen peas", "fixed": false },
+        { "amount": 3, "unit": "tbsp", "name": "soy sauce", "fixed": false },
+        { "amount": 2, "unit": "tbsp", "name": "olive oil", "fixed": false }
+      ],
+      "steps": ["Cut the chicken into small pieces and cook it in the oil until it is white all the way through.", "Push the chicken to the side and scramble the eggs in the pan.", "Add the onion, peas and rice. Stir for 5 minutes.", "Add the soy sauce and stir again."],
+      "notes": "Day old rice works best.", "source": "Mom's recipe card",
+      "nutritionCache": null
+    },
+    {
+      "id": "1002", "ownerId": "u1", "title": "Banana Oat Pancakes", "servings": 3, "minutes": 20,
+      "tags": ["breakfast", "kids", "sweet"],
+      "ingredients": [
+        { "amount": 1, "unit": "cup", "name": "flour", "fixed": false },
+        { "amount": 1, "unit": "cup", "name": "rolled oats", "fixed": false },
+        { "amount": 2, "unit": "", "name": "ripe bananas", "fixed": false },
+        { "amount": 1, "unit": "", "name": "egg", "fixed": false },
+        { "amount": 1, "unit": "cup", "name": "milk", "fixed": false },
+        { "amount": 1, "unit": "tbsp", "name": "butter", "fixed": false }
+      ],
+      "steps": ["Mash the bananas in a bowl.", "Stir in the egg, milk, flour and oats.", "Melt a little butter in a pan. Pour in small rounds of batter.", "Flip when you see bubbles. Cook until gold on both sides."],
+      "notes": "", "source": "",
+      "nutritionCache": null
+    },
+    {
+      "id": "1003", "ownerId": "u1", "title": "Sheet Pan Veggie Tacos", "servings": 4, "minutes": 35,
+      "tags": ["dinner", "vegetarian"],
+      "ingredients": [
+        { "amount": 1, "unit": "can", "name": "black beans", "fixed": false },
+        { "amount": 2, "unit": "", "name": "bell peppers", "fixed": false },
+        { "amount": 1, "unit": "", "name": "onion", "fixed": false },
+        { "amount": 2, "unit": "tbsp", "name": "Olive oil", "fixed": false },
+        { "amount": 8, "unit": "", "name": "small tortillas", "fixed": false },
+        { "amount": 1, "unit": "cup", "name": "shredded cheese", "fixed": false }
+      ],
+      "steps": ["Heat the oven to 425 F.", "Slice the peppers and onion. Toss them on a pan with the beans and oil.", "Bake for 20 minutes.", "Fill the tortillas and top with cheese."],
+      "notes": "Add hot sauce if you like heat.", "source": "",
+      "nutritionCache": null
+    },
+    {
+      "id": "1004", "ownerId": "u1", "title": "Lemon Garlic Salmon", "servings": 2, "minutes": 20,
+      "tags": ["dinner", "fish", "quick"],
+      "ingredients": [
+        { "amount": 2, "unit": "", "name": "salmon fillets", "fixed": false },
+        { "amount": 1, "unit": "", "name": "lemon", "fixed": false },
+        { "amount": 2, "unit": "cloves", "name": "garlic", "fixed": false },
+        { "amount": 20, "unit": "g", "name": "butter", "fixed": false },
+        { "amount": 1, "unit": "tbsp", "name": "olive oil", "fixed": false }
+      ],
+      "steps": ["Heat the oil in a pan.", "Cook the salmon skin side down for 5 minutes.", "Flip it. Add butter, garlic and lemon juice.", "Cook 3 more minutes and serve."],
+      "notes": "Salmon is fish. Check with guests about allergies.", "source": "",
+      "nutritionCache": null
+    },
+    {
+      "id": "1005", "ownerId": "u2", "title": "Garlic Butter Pasta", "servings": 2, "minutes": 15,
+      "tags": ["dinner", "vegetarian", "quick"],
+      "ingredients": [
+        { "amount": 200, "unit": "g", "name": "spaghetti", "fixed": false },
+        { "amount": 2, "unit": "tbsp", "name": "butter", "fixed": false },
+        { "amount": 2, "unit": "cloves", "name": "garlic", "fixed": false },
+        { "amount": 1, "unit": "", "name": "bay leaf", "fixed": true },
+        { "amount": 1, "unit": "", "name": "cooking spray", "fixed": true }
+      ],
+      "steps": ["Boil the spaghetti in salted water.", "Melt the butter and cook the garlic for 1 minute.", "Toss the spaghetti in the butter with a splash of pasta water.", "Top with parmesan."],
+      "notes": "", "source": "",
+      "nutritionCache": null
+    }
+  ],
+  "plan": [
+    { "userId": "u1", "day": 0, "meal": "breakfast", "recipeId": "1002", "servings": 3 },
+    { "userId": "u1", "day": 0, "meal": "dinner", "recipeId": "1001", "servings": 4 },
+    { "userId": "u1", "day": 1, "meal": "dinner", "recipeId": "1003", "servings": 4 },
+    { "userId": "u1", "day": 2, "meal": "breakfast", "recipeId": "1002", "servings": 3 },
+    { "userId": "u1", "day": 3, "meal": "dinner", "recipeId": "1004", "servings": 2 },
+    { "userId": "u1", "day": 4, "meal": "dinner", "recipeId": "1001", "servings": 4 }
+  ],
+  "checked": ["eggs"]
+}
