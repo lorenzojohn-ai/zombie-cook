@@ -2,8 +2,13 @@ import { NextResponse } from "next/server";
 import Stripe from "stripe";
 import { setProfilePaid } from "@/lib/db";
 
-const stripe = new Stripe(process.env.STRIPE_SECRET_KEY || "", { apiVersion: "2025-08-27.basil" });
 const endpointSecret = process.env.STRIPE_WEBHOOK_SECRET || "";
+
+function getStripe() {
+  const key = process.env.STRIPE_SECRET_KEY;
+  if (!key) throw new Error("Stripe secret key not configured.");
+  return new Stripe(key, { apiVersion: "2025-08-27.basil" });
+}
 
 export async function POST(req: Request) {
   const payload = await req.text();
@@ -11,6 +16,7 @@ export async function POST(req: Request) {
 
   let event: Stripe.Event;
   try {
+    const stripe = getStripe();
     event = stripe.webhooks.constructEvent(payload, sig, endpointSecret);
   } catch (err: any) {
     return NextResponse.json({ error: err.message }, { status: 400 });

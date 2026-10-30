@@ -1,9 +1,14 @@
 import { NextResponse } from "next/server";
 import Stripe from "stripe";
 
-const stripe = new Stripe(process.env.STRIPE_SECRET_KEY || "", { apiVersion: "2025-08-27.basil" });
 const PRICE_MONTHLY = process.env.STRIPE_PRICE_MONTHLY || "";
 const PRICE_ANNUAL = process.env.STRIPE_PRICE_ANNUAL || "";
+
+function getStripe() {
+  const key = process.env.STRIPE_SECRET_KEY;
+  if (!key) throw new Error("Stripe secret key not configured.");
+  return new Stripe(key, { apiVersion: "2025-08-27.basil" });
+}
 
 export async function POST(req: Request) {
   const { plan } = await req.json().catch(() => ({ plan: "monthly" }));
@@ -13,6 +18,7 @@ export async function POST(req: Request) {
   }
 
   try {
+    const stripe = getStripe();
     const session = await stripe.checkout.sessions.create({
       mode: "subscription",
       line_items: [{ price: priceId, quantity: 1 }],
