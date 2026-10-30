@@ -1,4 +1,4 @@
-import { getRecipeById } from "@/lib/db";
+import { getRecipeById, seedIfEmpty } from "@/lib/db";
 import { showAmount, convertUnit, isStandardUnit } from "@/lib/scale";
 import { detectAllergens } from "@/lib/allergens";
 import Link from "next/link";
@@ -6,6 +6,7 @@ import Link from "next/link";
 export const dynamic = "force-dynamic";
 
 export default async function SharedRecipe({ params }: { params: Promise<{ id: string }> }) {
+  seedIfEmpty();
   const { id } = await params;
   const recipe = getRecipeById(id);
   if (!recipe) return <div className="card"><strong>No recipe at this link.</strong></div>;
